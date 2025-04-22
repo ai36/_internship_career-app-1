@@ -1,0 +1,13 @@
+.box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(2 * var(--size));
+
+    padding: calc(3 * var(--size)) calc(5 * var(--size)) calc(2 * var(--size)) calc(5 * var(--size));
+}
+
+@media screen and (width < 1280px) {
+    .box {
+        padding: calc(3 * var(--size)) calc(2.5 * var(--size)) calc(2 * var(--size)) calc(2.5 * var(--size));
+    }
+}

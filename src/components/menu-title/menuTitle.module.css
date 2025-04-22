@@ -1,0 +1,16 @@
+.link {
+    font: var(--font-md-bold);
+    color: var(--neutral-400);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--primary-400);
+
+    }
+
+    &[active=true],
+    &:active {
+        color: var(--primary-500);
+        cursor: default;
+    }
+}

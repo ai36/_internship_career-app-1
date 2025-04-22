@@ -1,0 +1,25 @@
+body {
+    font: var(--font-md);
+    min-height: 100dvh;
+    min-width: var(--min-width);
+
+    background-color: var(--neutral-200);
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+input {
+    border: unset;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+}

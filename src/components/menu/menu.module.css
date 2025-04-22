@@ -1,0 +1,7 @@
+.nav {
+
+    .list {
+        display: flex;
+        gap: calc(4.5 * var(--size));
+    }
+}

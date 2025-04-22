@@ -1,0 +1,70 @@
+.box {
+    position: relative;
+
+    .pic {
+        display: flex;
+        position: absolute;
+        color: var(--primary-500);
+        top: calc(1 * var(--size));
+        left: calc(1.5 * var(--size));
+        z-index: 2;
+    }
+
+    .secondPic {
+        display: flex;
+        position: absolute;
+        color: var(--neutral-600);
+        top: calc(1.125 * var(--size));
+        right: calc(1.33 * var(--size));
+        z-index: 2;
+    }
+
+
+    .input {
+        width: 100%;
+        color: var(--neutral-600);
+        background-color: var(--neutral-100);
+        box-shadow: var(--shadow);
+        border-radius: calc(1 * var(--size));
+        padding: calc(1 * var(--size)) calc(1.5 * var(--size));
+        padding-left: calc(3.5 * var(--size));
+        font: var(--font-sm-bold);
+
+        &::placeholder {
+            color: inherit;
+        }
+    }
+
+    .details {
+        list-style: none;
+        position: absolute;
+        z-index: 1;
+
+        width: 100%;
+        color: var(--neutral-600);
+        background-color: var(--neutral-100);
+        box-shadow: var(--shadow);
+        border-radius: calc(1 * var(--size));
+        font: var(--font-sm-bold);
+        
+        .summary {
+            border-radius: calc(1 * var(--size));
+            padding: calc(1 * var(--size)) calc(1.5 * var(--size));
+            padding-left: calc(3.5 * var(--size));
+            color: var(--neutral-600);
+            list-style: none;
+
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .optionList {
+            padding: calc(1.5 * var(--size));
+
+            display: flex;
+            flex-direction: column;
+            gap: calc(1 * var(--size));
+        }
+
+    }
+}

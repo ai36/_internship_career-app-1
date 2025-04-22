@@ -1,0 +1,10 @@
+.requirements {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: calc(.5 * var(--size));
+
+    svg {
+        color: var(--primary-500);
+    }
+}
