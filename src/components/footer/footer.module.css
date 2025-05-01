@@ -1,8 +1,6 @@
 .footer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: calc(2 * var(--size)) calc(5 * var(--size));
+
+    padding-block: calc(2 * var(--size));
 
     .text {
         color: var(--neutral-600);
@@ -13,11 +11,5 @@
             text-decoration: underline;
             text-underline-offset: .2em;
         }
-    }
-}
-
-@media screen and (width < 1280px) {
-    .footer {
-        padding: calc(2 * var(--size)) calc(2.5 * var(--size));
     }
 }

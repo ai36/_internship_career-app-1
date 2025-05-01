@@ -1,6 +1,6 @@
 
 .box {
-    padding: calc(2 * var(--size)) calc(5 * var(--size));
+    padding-block: calc(2 * var(--size));
 
     display: flex;
     flex-direction: column;
@@ -15,13 +15,7 @@
         padding: 0;
         display: grid;
         grid-template-columns: repeat(auto-fit,
-        minmax(max(calc(100% / (var(--columns) + 1)), min( calc( (100% - 2.5 * var(--size) - 2 * var(--size)) / 3 ), 100%)), 1fr));
+        minmax(max(calc(100% / (var(--columns) + 1)), min( calc( (100% - 80px - 64px) / 3 ), 100%)), 1fr));
         gap: calc(2 * var(--size));   
-    }
-}
-
-@media screen and (width < 1280px) {
-    .box {
-        padding: calc(2 * var(--size)) calc(2.5 * var(--size));
     }
 }

@@ -1,4 +1,4 @@
-import { VacancyBlock } from "@components/vacancy-block/VacancyBlock";
+import { VacancyBlock } from "@components";
 import styles from "./vacancyList.module.css";
 
 export function VacancyList() {

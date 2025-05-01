@@ -5,18 +5,17 @@
     top: 0;
     z-index: 5;
 
-    .container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: calc(20.5 * var(--size));
-        padding: calc(1.5 * var(--size)) calc(5 * var(--size));
+    padding-block: calc(1.5 * var(--size));
 
-        .logoLink {
-            height: min-content;
-        }
+    .container {
+        gap: calc(20.5 * var(--size));
+    }
+
+    .logoLink {
+        height: min-content;
     }
 }
+
 @media screen and (width < 1600px) {
     .header {
         .container {
@@ -29,7 +28,6 @@
     .header {
         .container {
             gap: calc(8.125 * var(--size));
-            padding: calc(1.5 * var(--size)) calc(2.5 * var(--size));
         }
     }
 }

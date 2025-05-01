@@ -1,5 +1,4 @@
-import { Logo } from "@components/logo/Logo";
-import { Menu } from "@components/menu/Menu";
+import { Logo, Menu } from "@components";
 import styles from "./header.module.css";
 
 export function Header({ page }) {

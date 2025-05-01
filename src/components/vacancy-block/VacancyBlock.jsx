@@ -1,4 +1,4 @@
-import { VacancyCard } from "@components/vacancy-card/VacancyCard";
+import { VacancyCard } from "@components";
 import styles from "./vacancyBlock.module.css";
 
 const now = new Date();
