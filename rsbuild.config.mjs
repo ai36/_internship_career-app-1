@@ -6,6 +6,7 @@ export default defineConfig({
     plugins: [pluginReact()],
 
     html: {
+        favicon: 'public/favicon.svg',
         tags: [
             {
                 tag: "html",
@@ -21,6 +22,7 @@ export default defineConfig({
             "@components": path.resolve(__dirname, "src/components"),
             "@layouts": path.resolve(__dirname, "src/layouts"),
             "@pages": path.resolve(__dirname, "src/pages"),
+            "@utils": path.resolve(__dirname, "src/utils"),
         },
     },
 
