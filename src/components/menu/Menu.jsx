@@ -1,4 +1,4 @@
-import { MenuTitle } from "@components/menu-title/MenuTitle";
+import { MenuTitle } from "@components";
 import styles from "./menu.module.css";
 
 export function Menu({ page }) {

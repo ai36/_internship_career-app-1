@@ -1,10 +1,11 @@
-import { Icon } from "@components/icon/Icon";
+import { Icon } from "@components";
+import { createSalaryString } from "@utils";
 import styles from "./vacancyCard.module.css";
 
 export function VacancyCard({
     title = "Junior Frontend-разработчик",
-    salaryMin = "от 35 000",
-    salaryMax = "50 000",
+    salaryMin = 35000,
+    salaryMax = 50000,
     company = "Интернет Люди",
     city = "Москва",
     fits = [{ "experience": "Опыт от 1 года до 3 лет" }],
@@ -17,7 +18,7 @@ export function VacancyCard({
             <div className={styles.head}>
                 <h3 className={styles.title}>{title}</h3>
                 <p className={styles.salaryRange}>
-                    {salaryMin} - {salaryMax} ₽
+                    {createSalaryString(salaryMin, null, navigator.language || "ru-RU")}
                 </p>
             </div>
             <div className={styles.body}>

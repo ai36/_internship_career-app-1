@@ -1,5 +1,4 @@
-import { Search } from "@pages/Search";
-import { Favorites } from "@pages/Favorites";
+import { Search, Favorites } from "@pages";
 
 export function AppLayout({ page = "search"}) {
     const pages = {

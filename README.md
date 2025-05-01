@@ -1,4 +1,4 @@
-# WeatherApp
+# CareerApp
 
 <br>
 
@@ -22,7 +22,7 @@ npm i
 rsbuild dev --open
 ```
 or
-```
+```sh
 npm run dev
 ```
 

@@ -9,3 +9,13 @@
     border-width: 0 !important;
     white-space: nowrap !important;
 }
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: clamp(var(--min-width), 100%, var(--max-width));
+    padding-inline: clamp(40px, calc(-7.5 * var(--size) + 15.625%), 80px);
+    margin: auto;
+}

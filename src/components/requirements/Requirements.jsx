@@ -1,4 +1,4 @@
-import { Icon } from "@components/icon/Icon";
+import { Icon } from "@components";
 import styles from "./requirements.module.css";
 
 export function Requirements({ iconName, text, size = "small" }) {

@@ -1,13 +1,14 @@
-import { FilterList } from "@components/filter-list/FilterList";
-import { VacancyBlock } from "@components/vacancy-block/VacancyBlock";
+import { FilterList, VacancyList } from "@components";
+import styles from "./main.module.css";
 
 export function Main({ page }) {
     return (
-        <div className="container">
-            <h1 className="visually-hidden">Поиск вакансий</h1>
-            <FilterList />
-            <VacancyBlock />
-            <VacancyBlock />
-        </div>
+        <main className={styles.main}>
+            <div className={`${styles.container} container`}>
+                <h1 className="visually-hidden">Поиск вакансий</h1>
+                <FilterList />
+                <VacancyList />
+            </div>
+        </main>
     );
 }

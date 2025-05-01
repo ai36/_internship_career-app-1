@@ -1,4 +1,4 @@
-import { Icon } from "@components/icon/Icon";
+import { Icon } from "@components";
 import styles from "./filterItem.module.css";
 
 export function FilterItem({ itemType = "input", iconName = "location", text = "Город" }) {
