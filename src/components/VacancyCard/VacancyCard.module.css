@@ -1,0 +1,108 @@
+.wrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--border-radius-normal);
+
+  background-color: var(--bg-light-color);
+  box-shadow: var(--box-shadow-normal);
+
+  padding: var(--indent-big);
+
+  transition: box-shadow var(--transition-normal);
+}
+
+.wrapper:hover {
+  box-shadow: var(--box-shadow-active);
+}
+
+.wrapper:hover .btn {
+  opacity: 1;
+}
+
+.preloader {
+  background-color: var(--preloader);
+  border-radius: 40px;
+  color: transparent !important;
+  fill: transparent !important;
+  display: inline !important;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 700;
+  font-size: var(--indent-medium);
+  line-height: var(--line-height-big);
+  color: var(--text-dark-color);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 32px - 16px);
+
+  margin: 0;
+}
+
+.subtitle {
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.about-company {
+  display: flex;
+  flex-direction: column;
+  gap: var(--indent-small);
+
+  margin-top: var(--indent-medium);
+}
+
+.text {
+  font-weight: 500;
+  font-size: var(--text-size-small);
+  line-height: var(--line-height-medium);
+  color: var(--text-dark-color);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin: 0;
+}
+
+.experience {
+  display: flex;
+  gap: var(--indent-small);
+  margin-top: var(--indent-medium);
+}
+
+.btn {
+  position: absolute;
+  top: calc(32px - 2px);
+  right: 32px;
+
+  width: 16px;
+  height: 16px;
+
+  opacity: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding: 0;
+  margin-top: 2px;
+
+  transition: opacity var(--transition-normal);
+}
+
+.btn:hover .hide-img > path {
+  fill: var(--accent-color);
+  stroke: var(--accent-color);
+}
+
+.hide-img > path {
+  transition: all var(--transition-normal);
+}

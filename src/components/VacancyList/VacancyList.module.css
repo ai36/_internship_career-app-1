@@ -1,0 +1,10 @@
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.element {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

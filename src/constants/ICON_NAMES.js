@@ -1,0 +1,16 @@
+export const ICON_NAMES = {
+  arrowToRight: 'arrowToRight',
+  filter: 'filter',
+  briefcase: 'briefcase',
+  calendar: 'calendar',
+  hide: 'hide',
+  location: 'location',
+  experience: 'experience',
+  logo: 'logo',
+  graduation: 'graduation',
+  job: 'job',
+  other: 'other',
+  stack: 'stack',
+  time: 'time',
+  cash: 'cash',
+};

@@ -1,0 +1,169 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--size-32);
+  min-height: 100dvh;
+}
+
+.vacancyFull {
+  background-color: var(--color-netural-100);
+  box-shadow: var(--box-shadow-normal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-32);
+  padding: var(--size-32);
+  border-radius: var(--size-16);
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-24);
+
+    .titleBox {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-16);
+
+      .title {
+        margin: 0;
+        font-weight: 700;
+        font-size: var(--size-24);
+        line-height: var(--size-32);
+      }
+
+      .salary {
+        font-weight: 500;
+        font-size: var(--size-20);
+        line-height: var(--size-28);
+      }
+    }
+
+    .requirements {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-16);
+
+      .title {
+        margin: 0;
+        font-weight: 700;
+        font-size: var(--size-16);
+        line-height: var(--size-24);
+      }
+
+      .list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: var(--size-32);
+
+        .item {
+          display: flex;
+          gap: var(--size-16);
+
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+
+          .desc {
+            font-weight: 500;
+            font-size: var(--size-14);
+            line-height: var(--size-20);
+          }
+        }
+      }
+    }
+  }
+  .description {
+    .title {
+      font-weight: 700;
+      font-size: var(--size-20);
+      line-height: var(--size-28);
+    }
+
+    .desc {
+      font-weight: 400;
+      font-size: var(--size-16);
+      line-height: var(--size-24);
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-24);
+
+    .title {
+      font-weight: 700;
+      font-size: var(--size-20);
+      line-height: var(--size-28);
+    }
+
+    .list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--size-16);
+
+      .item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        .desc {
+          white-space: nowrap;
+          padding: var(--size-4) var(--size-8);
+          background-color: var(--color-primary-200);
+          border-radius: var(--size-16);
+        }
+      }
+    }
+  }
+
+  .publicationDate {
+    color: var(--color-netural-600);
+    font-weight: 700;
+    font-size: var(--size-14);
+    line-height: var(--size-20);
+  }
+}
+
+.cardCompany {
+  position: sticky;
+  top: 156px;
+
+  height: min-content;
+  background-color: var(--color-netural-100);
+  box-shadow: var(--box-shadow-normal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-16);
+  padding: var(--size-32);
+  border-radius: var(--size-16);
+
+  .logo {
+    height: 60px;
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .textBox {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-8);
+    color: var(--color-netural-800);
+
+    .title {
+      font-weight: 700;
+      font-size: var(--size-20);
+      line-height: var(--size-28);
+    }
+
+    .desc {
+      font-weight: 500;
+      font-size: var(--size-16);
+      line-height: var(--size-24);
+    }
+  }
+}

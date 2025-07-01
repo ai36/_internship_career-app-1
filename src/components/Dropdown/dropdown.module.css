@@ -1,0 +1,130 @@
+.dropdownCheckbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 8px 0;
+  background-color: var(--bg-light-color);
+  position: absolute;
+  z-index: 10;
+  top: 48px;
+  overflow-y: scroll;
+  box-shadow: 0px 3px 15px 0px #00000008;
+  border-radius: 0 0 16px 16px;
+  width: 100%;
+  max-height: calc(100vh - 200px);
+  box-sizing: border-box;
+}
+
+.dropdownCheckbox::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdownCheckbox::-webkit-scrollbar-thumb {
+  position: relative;
+  width: 4px;
+  height: 48px;
+  background: #5c89ce !important;
+  border-radius: 7px;
+}
+
+.dropdownCheckbox::-webkit-scrollbar-track {
+  background: var(--bg-light-color);
+}
+
+.optionCheckbox {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.optionCheckbox.radio::before {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionCheckbox.radio:has(input:checked)::before {
+  border-radius: 50%;
+  border: 2px solid #5c89ce;
+  background-image: none;
+}
+
+.optionCheckbox.radio:has(input:checked)::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #5c89ce;
+  border-radius: 50%;
+  top: 50%;
+  left: 32px;
+  transform: translate(-50%, -50%);
+}
+
+.optionCheckbox.radio:hover::before {
+  border: 2px solid #8caee0;
+}
+
+.optionCheckbox.radio:hover::after {
+  background-color: #8caee0;
+}
+
+.optionCheckbox.radio:has(input:checked):hover::before {
+  border: 2px solid #8caee0;
+  background-image: none;
+}
+
+.optionCheckbox.radio:has(input:checked):hover::after {
+  background-color: #8caee0;
+}
+
+.input {
+  display: none;
+  position: relative;
+}
+
+.optionCheckbox::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #c5c5c5;
+  border-radius: 4px;
+  vertical-align: middle;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.optionCheckbox:has(input:checked)::before {
+  border: 1.5px solid #5c89ce;
+  border-radius: 4px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="4" viewBox="0 0 8 6" fill="none"><path d="M6.66683 1L3.00016 5L1.3335 3.18182" stroke="%235C89CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-size: 9px 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.optionCheckbox:hover::before {
+  border-color: #8caee0;
+}
+
+.optionCheckbox:has(input:checked):hover::before {
+  border-color: #8caee0;
+  background-image: url('../../assets/img/vector.svg');
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mt8 {
+  margin-top: 8px;
+}

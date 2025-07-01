@@ -1,8 +1,13 @@
-import { AppLayout } from "@layouts";
-import "./assets/styles/style.css";
+import { Header, Main, Footer } from '@components';
 
-export default function App() {
-    return (
-      <AppLayout />
-    );
-}
+export const App = () => {
+  return (
+    <>
+      <Header />
+      <div className='container'>
+        <Main />
+        <Footer />
+      </div>
+    </>
+  );
+};
