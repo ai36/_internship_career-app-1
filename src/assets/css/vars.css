@@ -1,0 +1,60 @@
+:root {
+  --font-family: 'Montserrat', sans-serif;
+
+  --preloader: #e1e1e1;
+  --bg-light-color: #f9f9f9;
+  --bg-medium-color: #f6f6f6;
+
+  --text-dark-color: #202020;
+  --text-medium-color: #747474;
+  --text-light-color: #c5c5c5;
+  --accent-color: #5c89ce;
+  --accent-color-light: #8caee0;
+  --placeholder-color-light: #ebf1fa;
+
+  --border-radius-normal: 16px;
+
+  --indent-small: 8px;
+  --indent-medium: 16px;
+  --indent-medium-big: 24px;
+  --indent-big: 32px;
+
+  --text-size-small: 12px;
+  --text-size-small-medium: 14px;
+  --text-size-medium: 16px;
+  --text-size-big: 24px;
+
+  --line-height-medium: 1.33333333;
+  --line-height-medium-big: 1.42857142;
+  --line-height-big: 1.5;
+
+  --box-shadow-normal: 0 3px 15px 0 rgba(0, 0, 0, 0.03);
+  --box-shadow-active: 4px 4px 15px 0 rgba(0, 0, 0, 0.08);
+
+  --transition-normal: 0.2s ease-in;
+
+
+
+
+  --size-2: 2px;
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-14: 14px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-28: 28px;
+  --size-32: 32px;
+
+  --color-primary-100: #EBF1FA;
+  --color-primary-200: #CFDDF2;
+  --color-primary-400: #8CAEE0;
+  --color-primary-500: #5C89CE;
+
+  --color-netural-100: #F9F9F9;
+  --color-netural-600: #747474;
+  --color-netural-800: #202020;
+
+  --transition-duration: .2s;
+}

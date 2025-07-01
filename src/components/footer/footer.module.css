@@ -1,15 +1,17 @@
-.footer {
+.wrapper {
+  padding-block: var(--indent-big);
+}
 
-    padding-block: calc(2 * var(--size));
+.text {
+  font-weight: 500;
+  font-size: var(--text-size-small-medium);
+  line-height: var(--line-height-medium-big);
 
-    .text {
-        color: var(--neutral-600);
-        font: var(--font-md-medium);
-        translate: 0 -1px;
+  color: var(--text-medium-color);
 
-        .link {
-            text-decoration: underline;
-            text-underline-offset: .2em;
-        }
-    }
+  margin: 0;
+}
+
+.link {
+  color: var(--text-medium-color);
 }

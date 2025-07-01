@@ -1,0 +1,29 @@
+.item {
+  width: 53px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 16px;
+
+  background-color: var(--placeholder-color-light);
+  color: var(--text-dark-color);
+
+  text-align: center;
+
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.placeholder {
+  background-color: transparent;
+  cursor: default;
+}
+
+.item:not(.active):not(.placeholder):hover {
+  background-color: var(--accent-color-light);
+  color: var(--bg-light-color);
+}
+
+.active {
+  background-color: var(--accent-color);
+  color: var(--bg-light-color);
+}

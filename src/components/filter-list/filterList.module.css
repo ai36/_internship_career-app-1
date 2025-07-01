@@ -1,7 +1,0 @@
-.box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: calc(2 * var(--size));
-
-    padding-block: calc(3 * var(--size)) calc(2 * var(--size));
-}

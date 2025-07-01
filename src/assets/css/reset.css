@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body * {
+  transition-duration: var(--transition-duration);
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: unset;
+  padding: 0;
+  margin: 0;
+}

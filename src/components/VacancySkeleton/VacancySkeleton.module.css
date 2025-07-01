@@ -1,0 +1,103 @@
+@keyframes preloader {
+  0% {
+    background-color: var(--preloader);
+  }
+  30% {
+    background-color: rgb(219, 219, 219);
+  }
+  100% {
+    background-color: var(--preloader);
+  }
+}
+
+.date,
+.title,
+.subtitle,
+.name,
+.city,
+.experienceImg,
+.experienceText {
+  border-radius: 40px;
+  animation-name: preloader;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.blockWrapper {
+  padding-block: var(--indent-big);
+}
+
+.date {
+  width: 256px;
+  height: 32px;
+  margin: 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--indent-big);
+  margin: 0;
+  padding: 0;
+  margin-top: var(--indent-big);
+  list-style-type: none;
+}
+
+.wrapper {
+  position: relative;
+  border-radius: var(--border-radius-normal);
+  background-color: var(--bg-light-color);
+  box-shadow: var(--box-shadow-normal);
+  padding: var(--indent-big);
+  transition: box-shadow var(--transition-normal);
+}
+
+.title {
+  width: 225px;
+  height: 24px;
+  margin: 0;
+}
+
+.subtitle {
+  width: 131px;
+  height: 24px;
+  margin-top: 4px;
+}
+
+.aboutCompany {
+  display: flex;
+  flex-direction: column;
+  gap: var(--indent-small);
+  margin-top: var(--indent-medium);
+}
+
+.name {
+  width: 96px;
+  height: 16px;
+  margin: 0;
+}
+
+.city {
+  width: 55px;
+  height: 16px;
+  margin: 0;
+}
+
+.experience {
+  display: flex;
+  align-items: center;
+  gap: var(--indent-small);
+  margin-top: var(--indent-medium);
+}
+
+.experienceImg {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+}
+
+.experienceText {
+  width: 148px;
+  height: 16px;
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  overflow-y: scroll;
+  max-height: calc(100vh - 200px);
+  box-shadow: 0px 3px 15px 0px #00000008;
+  border-radius: 0 0 16px 16px;
+}
+
+.container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  position: relative;
+  width: 4px;
+  height: 48px;
+  background: #5c89ce !important;
+  border-radius: 7px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: var(--bg-light-color);
+}
