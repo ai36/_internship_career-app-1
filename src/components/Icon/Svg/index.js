@@ -13,4 +13,4 @@ export * from './StackSvg';
 export * from './TimeSvg';
 export * from './CashSvg';
 export * from './CrossSvg';
-export * from './EyeSolidSvg';
+export * from './EyeSolidSvg1';
