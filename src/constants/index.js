@@ -1,3 +1,5 @@
+import { CardOfVacancy, VacancySearch } from '@/pages';
+
 export * from '@/constants/ICON_NAMES';
 
 export const DEFAULT_ROW = 6;
@@ -13,3 +15,9 @@ export const API_PATHS = {
 };
 
 export const INDEX_OFFSET = 1;
+
+
+export const PAGES = {
+  vacancySearch: <VacancySearch />,
+  cardOfVacancy: <CardOfVacancy />,
+}

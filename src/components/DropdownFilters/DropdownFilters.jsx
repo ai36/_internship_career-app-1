@@ -1,5 +1,5 @@
-import { FilterItem } from '@components';
-import { ICON_NAMES } from '@constants';
+import { FilterItem } from '@/components';
+import { ICON_NAMES } from '@/constants';
 import styles from './drop.module.css';
 import {
   optionsCalendar,

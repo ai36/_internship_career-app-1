@@ -8,9 +8,11 @@ import { useParamsStore } from './ParamsStore';
 export const useVacanciesStore = create(
   devtools((set) => ({
     vacancies: {},
+    hiddenVacancies: [],
     pages: null,
     loading: false,
     error: null,
+    
     setVacancies: async (per_page = 18) => {
       set({ loading: true, error: null });
     
@@ -30,17 +32,13 @@ export const useVacanciesStore = create(
       }
     },
 
-    removeVacancyById: (id) => {
+    setHiddenVacancies: (id) => {
       set((state) => {
-        const newVacancies = {};
-        for (const date in state.vacancies) {
-          const filtered = state.vacancies[date].filter((vacancy) => vacancy.id !== id);
-          if (filtered.length > 0) {
-            newVacancies[date] = filtered;
-          }
-        }
-        return { vacancies: newVacancies };
-      });
-    }
+        const exists = state.hiddenVacancies.includes(id);
+        const newState = exists ? state.hiddenVacancies.filter((item) => item !== id) : [...state.hiddenVacancies, id]
+        return { hiddenVacancies: newState }
+      })
+    },
+
   })),
 );

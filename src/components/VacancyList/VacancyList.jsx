@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useParamsStore } from '@/store/ParamsStore';
 
 export const VacancyList = () => {
-  const { vacancies, loading, error, setVacancies } = useVacanciesStore();
+  const { vacancies, hiddenVacancies, loading, error, setVacancies } = useVacanciesStore();
   const { page } = useParamsStore((state) => state.params);
 
   const dates = Object.keys(vacancies);
@@ -13,18 +13,16 @@ export const VacancyList = () => {
   useEffect(() => {
     setVacancies();
   }, [page]);
-
+  
+  if (loading) return <VacancySkeleton />;
+  if (error) return <ErrorMessage message={error} />;
   return (
-    <>
-      {loading && <VacancySkeleton />}
-      {error && <ErrorMessage message={error} />}
-      <ul className={styles.list}>
-        {dates.map((date) => (
-          <li key={date} className={styles.element}>
-            <VacancyBlock dateText={date} vacancies={vacancies[date]} />
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul className={styles.list}>
+      {dates.map((date) => (
+        <li key={date} className={styles.element}>
+          <VacancyBlock dateText={date} vacancies={vacancies[date]} />
+        </li>
+      ))}
+    </ul>
   );
 };

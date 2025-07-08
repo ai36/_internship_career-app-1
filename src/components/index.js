@@ -2,7 +2,6 @@ export * from './Logo/Logo';
 export * from './ErrorMessage/ErrorMessage';
 export * from './Icon/Icon';
 export * from './Header/Header';
-export * from './Main/Main';
 export * from './Footer/Footer';
 export * from './FilterList/FilterList';
 export * from './FilterItem/FilterItem';

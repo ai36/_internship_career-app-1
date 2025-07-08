@@ -1,12 +1,12 @@
 import styles from './VacancySkeleton.module.css';
 import { VACANCIES_PER_PAGE } from '@constants';
 
-export const VacancySkeleton = () => {
+export const VacancySkeleton = ({ vacanciesPerPage }) => {
   return (
     <section className={styles.blockWrapper}>
       <h2 className={styles.date}></h2>
       <ul className={styles.list}>
-        {[...Array(VACANCIES_PER_PAGE)].map((element, index) => (
+        {[...Array(vacanciesPerPage || VACANCIES_PER_PAGE)].map((element, index) => (
           <li key={index}>
             <article className={styles.wrapper}>
               <div>

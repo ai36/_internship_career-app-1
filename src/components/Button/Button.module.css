@@ -19,6 +19,15 @@
       fill: currentColor;
     }
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+
 }
 
 .filled {

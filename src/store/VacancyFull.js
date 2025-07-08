@@ -21,10 +21,6 @@ export const useVacancyFullStore = create(
         set({ error: e.message });
       } finally {
         set({ loading: false });
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
       }
     },
 

@@ -6,3 +6,5 @@ export { dateFormatter } from './dateFormatter.js';
 export { toCapitalize } from './toCapitalize.js';
 export { formatURLParams } from './formatURLParams.js';
 export { getPaginationRange } from './getPaginationRange.js';
+export { getFullVacancyAddress } from './getFullVacancyAddress.js';
+export { getEmployersLogo } from './getEmployersLogo.js';
