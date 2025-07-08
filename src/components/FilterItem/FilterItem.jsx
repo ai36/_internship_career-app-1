@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './FilterItem.module.css';
-import { ICON_NAMES } from '@constants';
-import { Icon, Dropdown, DropdownFilters } from '@components';
+import { ICON_NAMES } from '@/constants';
+import { Icon, Dropdown, DropdownFilters } from '@/components';
 
 export const FilterItem = ({
   type,

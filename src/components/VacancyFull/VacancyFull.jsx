@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button, Icon } from '@components';
-import { formatSalary } from '@/utils';
+import { formatSalary, getFullVacancyAddress, getEmployersLogo } from '@/utils';
 import styles from './VacancyFull.module.css';
 import { useVacanciesStore, useVacancyFullStore } from '@/store';
 
-export const VacancyFull = ({ onClick }) => {
-  const { vacancies, removeVacancyById } = useVacanciesStore();
+export const VacancyFull = () => {
+  const { setHiddenVacancies } = useVacanciesStore();
   const { vacancyFull, vacancyId, fetchVacancyById, loading, error } = useVacancyFullStore();
 
   useEffect(() => {
@@ -13,23 +13,24 @@ export const VacancyFull = ({ onClick }) => {
       fetchVacancyById(vacancyId);
     }
   }, [vacancyId]);
-
-  const handleRemoveVacancyById = (event) => {
-    removeVacancyById(vacancyId);
-    onClick();
+  
+  const showVacancyRef = useRef(true)
+  const handleRemoveVacancyById = () => {
+    setHiddenVacancies(vacancyId);
+    showVacancyRef.current = !showVacancyRef.current;
   }
 
-  if (loading) return <section className={styles.wrapper}><section className={styles.vacancyFull}>Загрузка...</section></section>;
+  // if (loading) return <section className={styles.wrapper}><section className={styles.vacancyFull}>Загрузка...</section></section>;
   if (error) return <section className={styles.wrapper}><section className={styles.vacancyFull}>Ошибка: {error}</section></section>;
   if (!vacancyFull) return <section className={styles.wrapper}><section className={styles.vacancyFull}>Нет данных</section></section>;
 
   return (
-    <section className={styles.wrapper}>
+    <section className={`${styles.wrapper} ${loading ? styles.loading : ""}`}>
       <section className={styles.vacancyFull}>
         <header className={styles.header}>
           <section className={styles.titleBox}>
             <h2 className={styles.title}>{vacancyFull.name}</h2>
-            <span className={styles.salary}>{formatSalary(vacancyFull.salary)}</span>
+            <span className={styles.salary}>{formatSalary(vacancyFull.salary, vacancyFull.salary?.gross)}</span>
           </section>
 
           <section className={styles.requirements}>
@@ -51,7 +52,12 @@ export const VacancyFull = ({ onClick }) => {
           </section>
         </header>
 
-        <Button icon='hide' title='Скрыть' customize='outlined' onClick={(event) => handleRemoveVacancyById(event)} />
+        <Button
+          icon={showVacancyRef.current ? 'hide' : 'eyeSolid'}
+          title={showVacancyRef.current ? 'Скрыть' : 'Показать'}
+          customize='outlined'
+          onClick={handleRemoveVacancyById}
+        />
 
         <section className={styles.description}>
           <h3 className={styles.title}>Описание</h3>
@@ -62,7 +68,7 @@ export const VacancyFull = ({ onClick }) => {
         </section>
 
         <section className={styles.skills}>
-          <h3 className={styles.title}>Описание</h3>
+          <h3 className={styles.title}>Ключевые навыки</h3>
           <ul className={styles.list}>
             {vacancyFull.key_skills?.map((skill) => (
               <li className={styles.item} key={skill.name}>
@@ -80,11 +86,11 @@ export const VacancyFull = ({ onClick }) => {
 
       <aside className={styles.cardCompany}>
         {vacancyFull.employer.logo_urls &&
-          <img className={styles.logo} src={vacancyFull.employer.logo_urls["240"]} width="132" height="60" alt={`Логотип ${vacancyFull.employer.name}`} />
+          <img className={styles.logo} src={getEmployersLogo(vacancyFull.employer.logo_urls)} width="132" height="60" alt={`Логотип ${vacancyFull.employer.name}`} />
         }
         <div className={styles.textBox}>
         <h2 className={styles.title}>{vacancyFull.employer.name}</h2>
-        <span className={styles.desc}>г. Красноярск, улица Маерчака, д. 38</span>
+        <span className={styles.desc}>{getFullVacancyAddress(vacancyFull.address, vacancyFull.area.name)}</span>
         </div>
       </aside>
     </section>

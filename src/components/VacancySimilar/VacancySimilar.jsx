@@ -1,51 +1,74 @@
 import { ErrorMessage, VacancyCard, VacancySkeleton, Button } from '@components';
 import { formatSalary } from '@utils';
-import { useVacanciesStore } from '@store';
-import { useEffect, useState, useRef } from 'react';
-import { useParamsStore } from '@/store/ParamsStore';
-import { useVacancyFullStore } from '@store';
+import { useVacancyFullStore, useVacanciesSimilar } from '@store';
 import styles from './VacancySimilar.module.css';
+import { useEffect } from 'react';
 
 export const VacancySimilar = () => {
-  const [vacanciesPerPage, setVacanciesPerPage] = useState(6);
-
-  const { vacancies, loading, error, setVacancies } = useVacanciesStore();
-  const { page } = useParamsStore((state) => state.params);
+  const {
+    similarVacancies,
+    loading,
+    error,
+    setSimilarVacancies,
+    similarPage,
+    setSimilarPage,
+    similarPages,
+  } = useVacanciesSimilar();
   const vacancyId = useVacancyFullStore((state) => state.vacancyId);
 
-  const dates = Object.keys(vacancies);
-  const mergedVacancies = dates.flatMap((date) => vacancies[date]);
+  const isShowButtonSeeMore = similarPage < similarPages;
 
   useEffect(() => {
-    setVacanciesPerPage(6);
-  }, [vacancyId]);
-
-  useEffect(() => {
-    setVacancies(vacanciesPerPage);
-  }, [page, vacanciesPerPage]);
+    setSimilarVacancies(vacancyId);
+  }, [similarPage]);
 
   const handleMoreVacancies = () => {
-    setVacanciesPerPage((prev) => prev + 6);
+    setSimilarVacancies(vacancyId);
+    setSimilarPage(similarPage + 1);
   };
 
-  const buttonRef = useRef(null);
-  useEffect(() => {
-    if (!loading) {
-      buttonRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [mergedVacancies.length]);
+  if (loading)
+    return (
+      <section className={styles.wrapper}>
+        <ul className={styles.list}>
+          {similarVacancies.map((vacancy) => (
+            <li key={(similarPage + 1) * vacancy.id}>
+              <VacancyCard
+                id={vacancy.id}
+                position={vacancy.name}
+                salary={formatSalary(vacancy.salary) || 'Зарплата не указана'}
+                companyName={vacancy.employer.name}
+                cityName={vacancy.area.name}
+                experience={vacancy.experience.name}
+              />
+            </li>
+          ))}
+        </ul>
+        <VacancySkeleton />
+        {isShowButtonSeeMore && (
+          <section className={styles.addMore}>
+            <Button onClick={handleMoreVacancies} title='Загрузка...' disabled />
+          </section>
+        )}
+      </section>
+    );
+
+  if (error)
+    return (
+      <section className={styles.wrapper}>
+        <ErrorMessage message={error} />
+      </section>
+    );
 
   return (
     <section className={styles.wrapper}>
-      {loading && <VacancySkeleton />}
-      {error && <ErrorMessage message={error} />}
       <ul className={styles.list}>
-        {mergedVacancies.map((vacancy) => (
-          <li key={vacancy.id}>
+        {similarVacancies.map((vacancy) => (
+          <li key={(similarPage + 1) * vacancy.id}>
             <VacancyCard
               id={vacancy.id}
               position={vacancy.name}
-              salary={formatSalary(vacancy.salary)}
+              salary={formatSalary(vacancy.salary) || 'Зарплата не указана'}
               companyName={vacancy.employer.name}
               cityName={vacancy.area.name}
               experience={vacancy.experience.name}
@@ -53,9 +76,11 @@ export const VacancySimilar = () => {
           </li>
         ))}
       </ul>
-      <section className={styles.addMore} ref={buttonRef}>
-        <Button onClick={handleMoreVacancies} title='Показать еще' />
-      </section>
+      {isShowButtonSeeMore && (
+        <section className={styles.addMore}>
+          <Button onClick={() => setSimilarPage(similarPage + 1)} title='Показать еще' />
+        </section>
+      )}
     </section>
   );
 };

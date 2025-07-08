@@ -1,13 +1,7 @@
-import { Header, Main, Footer } from '@components';
+import { Layout} from '@/layouts';
 
 export const App = () => {
   return (
-    <>
-      <Header />
-      <div className='container'>
-        <Main />
-        <Footer />
-      </div>
-    </>
+    <Layout />
   );
 };

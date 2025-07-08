@@ -217,6 +217,15 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 
+ a[href]:focus-visible,
+button:focus-visible,
+[type='button']:focus-visible,
+[type='reset']:focus-visible,
+[type='submit']:focus-visible {
+  outline: 1px dotted currentColor;
+}
+
+a[href]:-moz-focusring,
 button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
