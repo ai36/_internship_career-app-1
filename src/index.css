@@ -1,0 +1,14 @@
+@import '@/assets/styles/normalize';
+@import '@/assets/styles/default';
+@import '@/assets/styles/fonts';
+@import '@/assets/styles/variables';
+
+body {
+  background-color: var(--bgColor);
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
