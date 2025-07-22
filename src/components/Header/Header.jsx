@@ -1,30 +1,51 @@
-import { clsx } from '@utils';
-import { Logo } from '@components';
-import styles from './Header.module.css';
+import { Container, IconSvg } from '@/components';
+import { clsx } from '@/utils';
 
-export const Header = () => {
+import styles from './Header.module.css';
+import { useEffect, useRef } from 'react';
+
+const navLinks = [
+  { href: '#', title: 'Поиск вакансий', isActive: true },
+  { href: '#', title: 'Избранные вакансии', isActive: false },
+];
+
+export function Header() {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.style.setProperty(
+      '--headerHeight',
+      `${headerRef.current.offsetHeight}px`,
+    );
+  }, [headerRef]);
+
   return (
-    <div className={styles['wrapper']}>
-      <header className={styles['header']}>
-        <Logo />
-        <nav className={styles['nav']}>
-          <ul className={styles['nav-tabs']}>
-            <li className={styles['nav-tab']}>
-              <button
-                type='button'
-                className={clsx(styles['tab-btn'], styles['active'])}
-              >
-                Поиск вакансий
-              </button>
-            </li>
-            <li className={styles['nav-tab']}>
-              <button type='button' className={styles['tab-btn']}>
-                Избранные вакансии
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+    <header className={styles.header} id={'header'} ref={headerRef}>
+      <Container>
+        <div className={styles.headerWrapper}>
+          <a href="/" className={styles.logoLink}>
+            <IconSvg id="logo-svg" className={styles.logoIcon} />
+          </a>
+          <nav>
+            <ul className={styles.navList}>
+              {navLinks.map((link) => (
+                <li key={link.title}>
+                  <a
+                    className={clsx(
+                      styles.navLink,
+                      link.isActive && styles.active,
+                    )}
+                    href={link.isActive ? link.href : null}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </Container>
+    </header>
   );
-};
+}

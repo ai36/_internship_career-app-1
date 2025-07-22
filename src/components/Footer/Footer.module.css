@@ -1,17 +1,15 @@
-.wrapper {
-  padding-block: var(--indent-big);
+.footer {
+  padding: 32px 0;
+  color: var(--colorGray);
+
+  font-size: var(--textMedium);
+  line-height: var(--lineHeightSmall);
 }
 
-.text {
-  font-weight: 500;
-  font-size: var(--text-size-small-medium);
-  line-height: var(--line-height-medium-big);
+.footer a {
+  text-decoration: underline;
 
-  color: var(--text-medium-color);
-
-  margin: 0;
-}
-
-.link {
-  color: var(--text-medium-color);
+  &:focus-visible {
+    outline: var(--outline);
+  }
 }

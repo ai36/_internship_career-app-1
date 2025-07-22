@@ -1,0 +1,66 @@
+.container {
+  position: relative;
+}
+
+.button {
+  width: 100%;
+  padding: 12px 16px 12px 24px;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  background-color: transparent;
+  font-weight: var(--fontWeightBold);
+  color: var(--colorGray);
+  user-select: none;
+  transition: var(--transition);
+  height: 48px;
+
+  &:hover {
+    color: var(--colorDefault);
+  }
+}
+
+.button:hover .chevron {
+  fill: var(--colorDefault);
+}
+
+.activeButton {
+  color: var(--colorDefault);
+}
+
+.title {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.icons {
+  width: 16px;
+  height: 16px;
+}
+
+.chevron {
+  width: 12px;
+  height: 12px;
+  transition: var(--transition);
+  fill: var(--colorGray);
+}
+
+.activeChevron {
+  rotate: 90deg;
+  fill: var(--colorDefault);
+}
+
+.optionsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 616px;
+  row-gap: 4px;
+  padding: 8px 24px;
+  transition: var(--transition);
+}
+
+.option:has(input[type="radio"]) + .option:has(input[type="checkbox"]) {
+  margin-top: 14px;
+  margin-bottom: 6px;
+}

@@ -1,0 +1,8 @@
+.section {
+  padding-block: var(--spacingBig);
+  width: 100%;
+}
+
+.section + .section {
+  padding-top: 0;
+}

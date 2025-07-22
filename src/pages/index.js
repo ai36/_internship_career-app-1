@@ -1,2 +1,2 @@
-export * from './VacancySearch';
-export * from './CardOfVacancy';
+export * from './Vacancies/Vacancies';
+export * from './VacancyPage/VacancyPage';

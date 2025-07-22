@@ -1,28 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@components": [
-        "src/components"
-      ],
-      "@constants": [
-        "src/constants"
-      ],
-      "@utils": [
-        "src/utils"
-      ],
-      "@store": [
-        "src/store"
-      ],
-      "@api": [
-        "src/api"
-      ]
+      "@/*": ["./src/*"]
     }
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

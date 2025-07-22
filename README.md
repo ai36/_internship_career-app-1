@@ -40,6 +40,52 @@ Create a job search application. Development from the ground up and working with
 + Number of task: 8
 + Technology: React, RSBuild, Zustand, HTML, CSS, JS
 
+### Task 6
+
+Implement a mechanism for fetching job listings from the API according to the filter settings.
+
+General:
+
+- Add the ability to select filters; the selected filters are saved in the state manager. When the page is refreshed or when navigating to other pages, the filters should be preserved (you can use sessionStorage or urlSearchParams to save data when reloading).
+
+- When the filters are changed, new requests are sent for updated job listings, taking the selected filters into account.
+
+- Every time a request is sent to the API, skeleton loaders should be shown.
+
+- If no job listings are found for the selected filters, display a message according to the [design](https://www.figma.com/design/0QFmqBCSbBuHuMnxpnF5b4/Career-App.-1-sprint.-6-task?node-id=0-1&t=Gm3cCW5opFDaCyWP-0).
+
+- If several values are selected in a filter, show the total number of selected values in each filter section (see the [design](https://www.figma.com/design/0QFmqBCSbBuHuMnxpnF5b4/Career-App.-1-sprint.-6-task?node-id=0-1&t=Gm3cCW5opFDaCyWP-0)).
+
+- For filters with radio buttons, there should always be one option selected. When the application is initialized, or when there are no selected options inside a radio button filter, the first option should be selected by default. These filters are not counted in the total number of selected filters (see the [design](https://www.figma.com/design/0QFmqBCSbBuHuMnxpnF5b4/Career-App.-1-sprint.-6-task?node-id=0-1&t=Gm3cCW5opFDaCyWP-0)).
+
+- For filters with checkboxes, any number of available options can be selected.
+
+Resetting filters:
+
+- If any filter has a value set, a "reset filters" button should appear. If no value is set in any filter, this button should not be shown.
+
+- When the "clear filters" button is clicked, all active filters should be reset, including any inputs. The API request in this case should be the same as when the application loads.
+
+Filter with input:
+
+- To get the list of countries, regions, and cities, use an array with data available from the API by [link](https://api.hh.ru/areas) (store it in a separate file in the app) or fetch the data directly via an [API call](https://api.hh.ru/openapi/redoc#tag/Obshie-spravochniki/operation/get-areas). Make sure to include all data for Russian regions and cities; data for other countries is optional.
+
+- The city search is live and starts after at least three characters are entered. If there are no matching cities, the dropdown is not shown.
+
+- If any cities are selected, when clicking on the input, show the selected cities according to the design, even if less than three characters have been entered.
+
+Hidden job listings:
+
+- The `include hidden jobs` filter should not be sent in the API request; this is handled on the frontend.
+
+- When `include hidden jobs` is selected, show all jobs that match the filters, including hidden ones.
+
+Sending the request:
+
+For technology tags, the selected technologies should be joined in the request like `&query=js+git+css`; for other filters, use `&query1=filterValue&query2=filterValue`. If several filters are selected, the request should look similar to this [example](https://api.hh.ru/vacancies/?page=0&per_page=18&order_by=publication_time&area=1&area=66&employment=full&employment=part&experience=noExperience&text=frontend+react+git).
+
+You can also check how filters work on the hh.ru website when searching for jobs.
+
 ### Task 5
 
 Create a detailed vacancy card according to the [layout](https://www.figma.com/design/VYUI4nmYxe4uIcwd1d4GQ3/Career-App.-1-sprint.-5-task?m=auto&t=5IxYMpyV8TeDAo4h-6), using data from the [API](https://dev.hh.ru/).

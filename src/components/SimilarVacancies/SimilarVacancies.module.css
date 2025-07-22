@@ -1,0 +1,9 @@
+.similarvacancies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul + ul {
+  margin-top: 32px;
+}

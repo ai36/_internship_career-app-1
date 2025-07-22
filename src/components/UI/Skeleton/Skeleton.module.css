@@ -1,0 +1,5 @@
+.placeholder {
+  background-color: var(--colorSkeleton);
+  border-radius: 16px;
+  cursor: default;
+}

@@ -1,26 +1,21 @@
-// Функция для отображения данных уровня зарплаты на карточке вакансии
-export const formatSalary = (salary, gross) => {
-  if (!salary) return;
-  
-  let condition = '';
-  if (gross !== undefined) {
-    condition = gross ? ' на руки' : ' до вычета налогов';
+import { CURRENCY } from '@/constants';
+import { formatNumber as format } from '@/utils/formatNumber';
+
+
+export const formatSalary = (salary) => {
+  if (!salary) return `Доход не указан`;
+
+  const {from, to, currency} = salary;
+  let formattedSalary = '';
+
+  if (!from) {
+    formattedSalary += 'до ' + format(to);
+  } else if (!to) {
+    formattedSalary += 'от ' + format(from);
+  } else {
+    formattedSalary += format(from) + ' - ' + format(to);
   }
 
-  let correctCurrency = salary.currency === 'RUR' ? 'RUB' : salary.currency;
-  const localeParams = {
-    style: 'currency',
-    currency: correctCurrency,
-    minimumFractionDigits: 0,
-  };
-  if (!salary.from && salary.to) {
-    return `до ${salary.to.toLocaleString('ru-RU', localeParams)}${condition}`;
-  }
-  if (salary.from && !salary.to) {
-    return `от ${salary.from.toLocaleString('ru-RU', localeParams)}${condition}`;
-  }
-  if (salary.from && salary.to) {
-    return `${salary.from.toLocaleString('ru-RU', { style: 'decimal' })} - ${salary.to.toLocaleString('ru-RU', localeParams)}${condition}`;
-  }
-  return `Доход не указан`;
+  return formattedSalary + ` ${CURRENCY[currency]}`;
 };
+
