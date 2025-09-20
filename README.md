@@ -40,6 +40,28 @@ Create a job search application. Development from the ground up and working with
 + Number of task: 8
 + Technology: React, RSBuild, Zustand, HTML, CSS, JS
 
+### Task 8
+
+Add a skeleton for the job details page while the data is loading and implement responsive layout according to the [design](https://www.figma.com/design/k4GTLtkwD7QCwIJ1Ebyl0a/Career-App.-1-sprint.-8-task?m=auto&t=p0T10EBDviGwZRrF-6).
+
+Mobile version: 375 px to 767 px
+
+Tablet version: 768 px to 1023 px
+
+Desktop version: 1024 px to 1279 px
+
+Desktop: above 1280 px
+
+The website header should be fixed to the top edge of the screen when scrolling.
+
+### Task 7
+
+Implement responsive layout for the job search screen according to the [design](https://www.figma.com/design/dLIQb0remaIGNujqlnvSLt/Career-App.-1-sprint.-7-task?m=auto&t=5IxYMpyV8TeDAo4h-6): mobile version: 375–767 px, tablet: 768–1023 px, desktop: 1024–1279 px, desktop above 1280 px.
+
+The website header should be “fixed” to the top edge of the screen when scrolling.
+
+The responsive layout for the job details page will be implemented later.
+
 ### Task 6
 
 Implement a mechanism for fetching job listings from the API according to the filter settings.

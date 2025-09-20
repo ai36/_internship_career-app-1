@@ -1,0 +1,111 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #5c89ce;
+  border-radius: 2px;
+}
+
+body {
+  margin: 0;
+  min-width: 1024px;
+  font-family: Montserrat, sans-serif;
+  background: var(--neutral-200);
+  min-height: 100vh;
+}
+
+body:has(header input[type="checkbox"]:checked) {
+  overflow: hidden;
+}
+
+#root {
+  display: contents;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+input:disabled,
+textarea:disabled,
+button:disabled {
+  pointer-events: none;
+}
+
+img,
+svg {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--neutral-600);
+}
+
+ol,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.d-none {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  body {
+    min-width: 764px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    min-width: 375px;
+  }
+}

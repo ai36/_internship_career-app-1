@@ -1,0 +1,125 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  min-height: 688px;
+
+  @media screen and (width < 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-row: auto auto;
+    gap: 24px;
+    min-height: 596px;
+  }
+
+  @media screen and (width < 768px) {
+    padding: 16px;
+    min-height: 514px;
+  }
+
+  .textBox {
+    position: relative;
+    grid-column: span 2;
+    overflow: hidden;
+
+    padding: 32px;
+    background-color: var(--neutral-100);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+
+    @media screen and (width < 1024px) {
+      padding: 24px;
+    }
+
+    @media screen and (width < 768px) {
+      padding: 16px;
+      grid-column: unset;
+    }
+
+    div {
+      white-space: nowrap;
+    }
+
+    div[style*="--"] {
+      background-color: var(--neutral-300);
+      border-radius: 16px;
+
+      width: calc(1px * var(--w));
+      height: calc(1px * var(--h));
+      margin-right: calc(1px * var(--cg));
+      margin-bottom: calc(1px * var(--rg));
+    }
+
+    &::after {
+      --offset: 24px;
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: unset;
+      width: calc(2 * var(--offset));
+      background-color: var(--neutral-100);
+      mask-image: linear-gradient(90deg, transparent, var(--neutral-100) var(--offset));
+  
+      @media screen and (width < 1024px) {
+        --offset: 16px;
+      }
+
+      @media screen and (width < 768px) {
+        --offset: 12px;
+      }
+    }
+  }
+
+  .logoBox {
+    grid-column: span 1;
+
+    @media screen and (width < 768px) {
+      grid-column: unset;
+    }
+
+    .wrapper {
+      height: 100%;
+
+      .layout {
+        position: sticky;
+        top: calc(72px + 20px + 2 * 32px);
+        display: flex;
+        flex-direction: column;
+
+        padding: 32px;
+        background-color: var(--neutral-100);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+
+        @media screen and (width < 1024px) {
+          padding: 24px;
+          display: inline-flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          min-width: 378px;
+        }
+
+        @media screen and (width < 768px) {
+          padding: 16px;
+          display: flex;
+          min-width: unset;
+        }
+
+        div[style*="--"] {
+          background-color: var(--neutral-300);
+          border-radius: 16px;
+    
+          width: calc(1px * var(--w));
+          height: calc(1px * var(--h));
+          margin-right: calc(1px * var(--cg));
+          margin-bottom: calc(1px * var(--rg));
+
+          @media screen and (width < 1024px) {
+          }
+  
+          @media screen and (width < 768px) {
+          }
+        }
+      }
+    }
+  }
+}

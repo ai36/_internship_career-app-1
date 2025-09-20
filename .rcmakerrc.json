@@ -1,7 +1,7 @@
 {
   "useTypeScript": false,
   "defaultTemplate": "import styles from './${componentStyleFileName}';\n\nexport const ${componentName} = () => {\n  return (\n    <>\n      <div className={styles.${camelCase}}>Hello from ${componentName}</div>\n    </>\n  );\n}",
-  "folderNameStyle": "PascalCase",
+  "folderNameStyle": "camelCase",
   "fileNameStyle": "PascalCase",
   "createStyleFile": true,
   "styleFileNameStyle": "PascalCase",

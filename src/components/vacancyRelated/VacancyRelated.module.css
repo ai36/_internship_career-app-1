@@ -1,0 +1,37 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding-block: 32px;
+
+  @media screen and (width < 1024px) {
+    row-gap: 24px;
+    padding-block: 24px;
+  }
+
+  @media screen and (width < 768px) {
+    row-gap: 16px;
+    padding-block: 16px;
+  }
+}
+
+.list {
+  padding: 0;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media screen and (width < 768px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.btn-wrapper {
+  text-align: center;
+}

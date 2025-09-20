@@ -1,0 +1,183 @@
+.card {
+  display: grid;
+  background-color: var(--neutral-100);
+  padding: 32px;
+  gap: 16px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--transition) ease-in-out;
+  cursor: pointer;
+
+  @media screen and (width < 1024px) {
+    gap: 12px;
+    padding: 24px;
+  }
+
+  @media screen and (width < 768px) {
+    padding: 16px;
+  }
+}
+
+.card:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.card .salary {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.main {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 16px;
+  gap: 32px;
+
+  @media screen and (width < 1024px) {
+    gap: 24px;
+  }
+
+  @media screen and (width < 768px) {
+    gap: 16px;
+  }
+}
+
+.headerBlock {
+  display: grid;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--neutral-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity var(--transition) ease-in-out;
+}
+
+.title > button {
+  width: 100%;
+  text-align: left;
+}
+
+.controlsBlock {
+  display: flex;
+  justify-content: end;
+}
+
+.eye {
+  opacity: 0;
+  transition: opacity var(--transition);
+
+  @media screen and (width < 1024px) {
+    opacity: 1;
+  }
+}
+
+.eyeRevers {
+  opacity: 1;
+}
+
+.eyeRevers > path:first-child {
+  stroke: var(--primary-500);
+}
+
+.eyeRevers > path:last-child {
+  fill: var(--primary-500);
+}
+
+.eye > path {
+  transition: stroke var(--transition) ease-in-out, fill var(--transition) ease-in-out;
+}
+
+.eyeRevers > path {
+  transition: stroke var(--transition) ease-in-out, fill var(--transition) ease-in-out;
+}
+
+.card:hover .eye,
+.eye-btn:focus-visible .eye {
+  opacity: 1;
+}
+
+.upContent {
+  display: grid;
+  gap: 8px;
+  transition: opacity var(--transition) ease-in-out;
+}
+
+.upContent p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.additional {
+  display: grid;
+  gap: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.experience {
+  display: flex;
+  gap: 8px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .eye {
+    opacity: 1;
+  }
+}
+
+
+
+@media (min-width: 1024px) {
+  .title:hover {
+    opacity: 0.8;
+  }
+
+  .eye:hover > path:first-child {
+    stroke: var(--primary-500);
+  }
+
+  .eye:hover > path:last-child {
+    fill: var(--primary-500);
+  }
+}
+
+@media (max-width: 1023px) {
+  .upContent {
+    gap: 6px;
+  }
+
+  .additional {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title,
+  .card .salary {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .upContent {
+    gap: 4px;
+  }
+
+  .additional {
+    gap: 8px;
+  }
+
+  .cardsBlock {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,68 @@
+.li {
+  padding-block: 2px;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-block: 8px;
+}
+.input {
+  position: absolute;
+  visibility: hidden;
+  padding-block: 8px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.label {
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--neutral-400);
+  transform: translateY(0.5px);
+  transition: border-color var(--transition) ease-in-out;
+}
+
+.input:hover ~ .field {
+  border-color: var(--primary-400);
+}
+
+.input[type="checkbox"] ~ .field {
+  border-radius: 4px;
+}
+
+.input[type="radio"] ~ .field {
+  border-radius: 50%;
+}
+
+.input[type="checkbox"]:checked ~ .field {
+  border-color: var(--primary-500);
+  background: url(../../assets/img/checkMark.png) no-repeat center;
+}
+
+.input[type="radio"]:checked ~ .field {
+  border-color: var(--primary-500);
+}
+
+.input[type="radio"]:checked ~ .field::before {
+  position: relative;
+  content: "";
+  width: 12px;
+  height: 6px;
+  background-color: var(--primary-500);
+  border-radius: 4px;
+  left: 3px;
+}

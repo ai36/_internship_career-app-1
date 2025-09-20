@@ -4,21 +4,17 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   html: {
-    title: 'Career App',
-    favicon: './src/assets/icons/favicon.svg',
-    meta: {
-      description: 'Job search application',
-    },
-    tags: [{
-      tag: 'html',
-      attrs: {
-        lang: 'ru'
-      }
-    }]
+    title: "Career App",
   },
   source: {
     alias: {
-      '@': './src',
-    },
+      "@assets": "./src/assets",
+      "@components": "./src/components",
+      "@data": "./src/data",
+      "@pages": "./src/pages",
+      "@store": "./src/store",
+      "@utils": "./src/utils",
+      "@hooks": "./src/hooks",
+    }
   },
 });

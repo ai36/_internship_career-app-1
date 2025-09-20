@@ -1,0 +1,23 @@
+.star {
+  width: 12px;
+  height: 12px;
+}
+
+.slash-eye {
+  width: 16px;
+  height: 16px;
+}
+
+.slash-eye>path:first-child {
+  stroke: var(--neutral-400);
+}
+
+.slash-eye>path:last-child {
+  fill: var(--neutral-400);
+}
+
+.eye {
+  width: 20px;
+  height: 17px;
+  fill: var(--neutral-400);
+}

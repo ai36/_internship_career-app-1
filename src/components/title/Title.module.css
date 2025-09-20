@@ -1,0 +1,11 @@
+.block {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+
+  @media screen and (width < 768px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

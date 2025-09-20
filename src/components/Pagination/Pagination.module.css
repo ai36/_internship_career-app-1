@@ -1,52 +1,57 @@
-.paginationBlock {
+.list {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 32px 80px;
-}
-
-.pages {
-  display: flex;
+  justify-content: center;
   gap: 8px;
+  padding: 32px 0;
 }
 
-.pageButton {
-  transition:
-    color var(--transition),
-    background-color var(--transition);
-  border-radius: 16px;
-  background-color: #ebf1fa;
-  padding: 12px;
+.btn,
+.item.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 53px;
-  color: var(--colorDefault);
-  font-weight: var(--fontWeightDefault);
-  font-size: var(--textMedium);
-  line-height: var(--lineHeightSmall);
-  text-align: center;
-
-  &:hover,
-  &:focus {
-    background-color: var(--colorNavLinkHover);
-    color: var(--bgAccentColor);
-  }
-
-  &:active,
-  &:disabled {
-    background-color: var(--colorAccent);
-    color: var(--bgAccentColor);
-  }
-
-  &:disabled {
-    cursor: default;
-  }
+  height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.429;
 }
 
-.dots {
-  border-radius: 16px;
-  padding: 12px;
-  width: 53px;
-  font-weight: var(--fontWeightDefault);
-  font-size: var(--textMedium);
-  line-height: var(--lineHeightSmall);
-  text-align: center;
+.item.dots {
+  pointer-events: none;
+}
+
+.btn {
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary-300);
+  transition: color var(--transition) ease-in-out,
+    background var(--transition) ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--neutral-100);
+  background: var(--primary-400);
+}
+
+.btn.active {
+  color: var(--neutral-100);
+  background: var(--primary-500);
+}
+
+@media (max-width: 767px) {
+  .list {
+    gap: 4px;
+    padding: 16px 0;
+  }
+
+  .btn,
+  .item.dots {
+    width: 41px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
