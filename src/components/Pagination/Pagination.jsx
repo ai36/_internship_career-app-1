@@ -3,7 +3,7 @@ import { clsx } from "@utils/clsx";
 import styles from "./pagination.module.css";
 import { useVacancyStore } from "@store/vacancyStore";
 
-const Pagination = ({ curPage, onChange, pagesCount, className }) => {
+export const Pagination = ({ curPage, onChange, pagesCount, className }) => {
   const { filters } = useVacancyStore();
   // Формируем массив items длины, равной общему кол-ву страниц, и убираем из него все лишние элементы, а именно которые не собираемся показывать юзеру
   const items = useMemo(
@@ -48,5 +48,3 @@ const Pagination = ({ curPage, onChange, pagesCount, className }) => {
     </ul>
   );
 };
-
-export default Pagination;

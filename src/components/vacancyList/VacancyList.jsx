@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useVacancyStore } from "@store/vacancyStore";
 import VacancyBlock from "./vacancyBlock/VacancyBlock";
 import SkeletonVacancyList from "./SkeletonVacancyList";
-import Pagination from "../pagination/Pagination";
+import { Pagination } from "@components/pagination/Pagination";
 import { NoSearchVacancy } from "@components/noSearchVacancy/NoSearchVacancy";
 import styles from "./VacancyList.module.css";
 
