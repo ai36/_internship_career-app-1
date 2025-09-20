@@ -1,29 +1,19 @@
 {
-  "name": "rsbuild-react-js",
+  "name": "123",
   "private": true,
   "version": "1.0.0",
   "scripts": {
     "dev": "rsbuild dev --open",
     "build": "rsbuild build",
-    "preview": "rsbuild preview",
-    "CC": "node cli/createComponent.js --path"
+    "preview": "rsbuild preview"
   },
   "dependencies": {
-    "minimist": "^1.2.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "zustand": "^5.0.3"
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@rsbuild/core": "^1.0.16",
-    "@rsbuild/plugin-react": "^1.0.5",
-    "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.10.0",
-    "eslint": "^9.10.0",
-    "eslint-plugin-react": "^7.35.2",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "globals": "^15.9.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-css-order": "^2.1.2"
+    "@rsbuild/core": "^0.6.7",
+    "@rsbuild/plugin-react": "^0.6.7"
   }
 }

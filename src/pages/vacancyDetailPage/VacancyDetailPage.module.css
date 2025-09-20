@@ -1,0 +1,16 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding-block: 32px;
+
+  @media screen and (width < 1024px) {
+    row-gap: 24px;
+    padding-block: 24px;
+  }
+
+  @media screen and (width < 768px) {
+    row-gap: 16px;
+    padding-block: 16px;
+  }
+}

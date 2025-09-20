@@ -1,0 +1,29 @@
+.bg {
+  padding-inline: 40px;
+}
+
+.container {
+  min-width: 944px;
+  max-width: 1120px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 72px);
+}
+
+@media (max-width: 1023px) {
+  .container {
+    min-width: 668px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bg {
+    padding-inline: 20px;
+  }
+
+  .container {
+    min-width: 335px;
+    min-height: calc(100vh - 56px);
+  }
+}

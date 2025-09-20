@@ -1,0 +1,22 @@
+.wrapper {
+  padding: 32px 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--neutral-600);
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 16px 0px;
+  }
+}

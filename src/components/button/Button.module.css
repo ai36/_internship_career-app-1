@@ -1,0 +1,46 @@
+.baseButton {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: 2px solid transparent;
+  background: none;
+  font-family: Montserrat, sans-serif;
+  cursor: pointer;
+  color: var(--primary-500);
+  transition: color var(--transition);
+  font-weight: 700;
+
+  @media screen and (width < 768px) {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+  }
+}
+
+.disabled {
+  color: var(--neutral-400);
+}
+
+.disabled:hover {
+  color: var(--primary-400);
+}
+
+.primary {
+  padding: 16px 24px;
+  color: var(--neutral-100);
+  background-color: var(--primary-500);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition) ease-in-out;
+
+  @media screen and (width < 768px) {
+    padding: 0 16px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .primary:hover {
+    background-color: var(--primary-400);
+  }
+}

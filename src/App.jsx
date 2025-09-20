@@ -1,22 +1,30 @@
-import { useEffect } from 'react';
-import { vacancyService } from '@/services';
-import { AppLayout } from '@/layouts';
-import { Vacancies, VacancyPage } from '@/pages';
-import { PageRouter } from '@/contexts';
-import { Route } from '@/components';
+import React, { useState } from "react";
+import Layout from "@components/layout/Layout";
+import { ROUTES } from "./routes";
+import { RouterContext } from "./contexts/routerContext";
 
 const App = () => {
-  useEffect(() => {
-    vacancyService.fetch();
-  }, []);
+  const [currentRoute = "", setCurrentRoute] = useState(
+    ROUTES.find((route) => location.pathname.includes(route.path))?.id
+  );
+
+  const [detailVacancyId = "", setDetailVacancyId] = useState(() => {
+    const url = new URL(location);
+    const id = url.searchParams.get("id");
+    return id;
+  });
 
   return (
-    <PageRouter>
-      <AppLayout>
-        <Route to={'vacancies'} component={<Vacancies />} />
-        <Route to={'vacancy/:vacancyId'} component={<VacancyPage />} />
-      </AppLayout>
-    </PageRouter>
+    <RouterContext.Provider
+      value={{
+        currentRoute,
+        detailVacancyId,
+        setCurrentRoute,
+        setDetailVacancyId,
+      }}
+    >
+      <Layout />
+    </RouterContext.Provider>
   );
 };
 

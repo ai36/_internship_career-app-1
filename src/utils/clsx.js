@@ -1,3 +1,7 @@
-export const clsx = (...classNames) => {
-  return classNames.map((cn) => cn).join(' ');
+export const clsx = (
+  ...classNames
+) => {
+  const classesList = [...classNames].filter((item) => item);
+
+  return classesList.join(' ');
 };
